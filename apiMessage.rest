@@ -1,0 +1,37 @@
+######### Variáveis de ambiente
+@token = "Mg.3zq28geLF9FTE3_fiOPq6O1Oz1Y00hjy8jrBdOiFlPr92E91hpRs_6nLf-35"
+
+######### Cadastro de Mensagem
+POST http://127.0.0.1:3333/messages HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer Mg.3zq28geLF9FTE3_fiOPq6O1Oz1Y00hjy8jrBdOiFlPr92E91hpRs_6nLf-35
+
+{
+    "title": "Olá",
+    "message": "Terceira mensagem do chat!",
+    "topic": [1]
+}
+
+######### Listar todos as Mensagens
+GET http://127.0.0.1:3333/messages HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer Mg.3zq28geLF9FTE3_fiOPq6O1Oz1Y00hjy8jrBdOiFlPr92E91hpRs_6nLf-35
+
+######### Listar Mensagem específica
+GET http://127.0.0.1:3333/messages/14 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer Mg.3zq28geLF9FTE3_fiOPq6O1Oz1Y00hjy8jrBdOiFlPr92E91hpRs_6nLf-35
+
+######### Alterar Mensagem
+PUT http://127.0.0.1:3333/messages/1 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+{
+    "title": "Olá",
+    "message": "Mensagem do chat alterada!"
+}
+
+######### Apagar Mensagem
+DELETE http://127.0.0.1:3333/messages/1 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
